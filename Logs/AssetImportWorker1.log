@@ -1,9 +1,9 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.2/respin/6000.2.0f1-517f89d850d1' branch; Version is '6000.2.0f1 (eed1c594c913) revision 15651269'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian" at "2025-09-09T18:53:55.0715391Z"
 OS: 'Windows 11  (10.0.26100) 64bit CoreSingleLanguage' Language: 'en' Physical Memory: 7418 MB
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian" at "2025-09-09T05:28:27.2394116Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
-Date: 2025-09-09T05:28:27Z
+Date: 2025-09-09T18:53:55Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.2.0f1\Editor\Unity.exe
@@ -17,7 +17,7 @@ C:/Users/Sealbastian/Documents/SP2025
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-49997
+57550
 -licensingIpc
 LicenseClient-Sealbastian
 -job-worker-count
@@ -65,34 +65,34 @@ C:/Users/Sealbastian/Documents/SP2025
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [1916]  Target information:
+Player connection [24160]  Target information:
 
-Player connection [1916]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 1059415953 [EditorId] 1059415953 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R1QJ1R5) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [24160]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 1149335220 [EditorId] 1149335220 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R1QJ1R5) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [1916] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [1916] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [24160] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [24160] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 22940, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 26352, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Error: HandshakeResponse reported an error:
 	ResponseCode: 505
 	ResponseStatus: Unsupported protocol version '1.17.1'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-Sealbastian"
 [Licensing::IpcConnector] LicenseClient-Sealbastian channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian-6000.2.0" at "2025-09-09T05:28:27.2915634Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 5904, path: "C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian-6000.2.0" at "2025-09-09T18:53:55.1162981Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 21692, path: "C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.17.1+ae67fbc
-  Session Id:              2185e010c988406aae6b16ad9c8b39c5
-  Correlation Id:          e407556f7a8486ec9458b16f6901f0f9
-  External correlation Id: 7288835376671777596
+  Session Id:              ccb35db77ccb4ec885488ef16ad92b53
+  Correlation Id:          6244aa4ebedca23eb702b60a6dd4e6c7
+  External correlation Id: 4566924017032833258
   Machine Id:              VOykiKglYbCqCtPdp9R99kemwRM=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Sealbastian-6000.2.0" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian-6000.2.0-notifications" at "2025-09-09T05:28:27.3069006Z"
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Sealbastian-6000.2.0" (connect: 0.00s, validation: 0.01s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian-6000.2.0-notifications" at "2025-09-09T18:53:55.1380313Z"
 [Licensing::Module] Licensing Background thread has ended after 0.07s
 Library Redirect Path: Library/
 [Physics::Module] Selected backend.
@@ -101,7 +101,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 3.10 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 7.27 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.2.0f1 (eed1c594c913)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/Resources/UnitySubsystems
@@ -118,43 +118,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56680
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56628
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003131 seconds.
-- Loaded All Assemblies, in  0.537 seconds
+Registered in 0.003599 seconds.
+- Loaded All Assemblies, in  0.594 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.395 seconds
-Domain Reload Profiling: 930ms
-	BeginReloadAssembly (224ms)
+- Finished resetting the current domain, in  0.446 seconds
+Domain Reload Profiling: 1037ms
+	BeginReloadAssembly (272ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (2ms)
-	RebuildCommonClasses (45ms)
-	RebuildNativeTypeToScriptingClass (11ms)
+	RebuildCommonClasses (60ms)
+	RebuildNativeTypeToScriptingClass (12ms)
 	initialDomainReloadingComplete (62ms)
-	LoadAllAssembliesAndSetupDomain (191ms)
-		LoadAssemblies (216ms)
+	LoadAllAssembliesAndSetupDomain (185ms)
+		LoadAssemblies (265ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (187ms)
-			TypeCache.Refresh (184ms)
-				TypeCache.ScanAssembly (163ms)
+		AnalyzeDomain (181ms)
+			TypeCache.Refresh (178ms)
+				TypeCache.ScanAssembly (162ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (396ms)
+	FinalizeReload (447ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (353ms)
+		SetupLoadedEditorAssemblies (409ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (55ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (76ms)
-			ProcessInitializeOnLoadAttributes (155ms)
-			ProcessInitializeOnLoadMethodAttributes (62ms)
+			InitializePlatformSupportModulesInManaged (60ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (100ms)
+			ProcessInitializeOnLoadAttributes (184ms)
+			ProcessInitializeOnLoadMethodAttributes (59ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -169,67 +169,83 @@ Begin MonoManager ReloadAssembly
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
-- Loaded All Assemblies, in  1.501 seconds
-Refreshing native plugins compatible for Editor in 1.36 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.297 seconds
+Refreshing native plugins compatible for Editor in 1.41 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-SP2025
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.032 seconds
-Domain Reload Profiling: 2514ms
-	BeginReloadAssembly (391ms)
+- Finished resetting the current domain, in  0.942 seconds
+Domain Reload Profiling: 2230ms
+	BeginReloadAssembly (227ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (14ms)
+		DisableScriptedObjects (8ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (48ms)
+		CreateAndSetChildDomain (36ms)
 	RebuildCommonClasses (37ms)
 	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (47ms)
-	LoadAllAssembliesAndSetupDomain (994ms)
-		LoadAssemblies (807ms)
+	initialDomainReloadingComplete (45ms)
+	LoadAllAssembliesAndSetupDomain (968ms)
+		LoadAssemblies (691ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (403ms)
-			TypeCache.Refresh (267ms)
-				TypeCache.ScanAssembly (240ms)
-			BuildScriptInfoCaches (125ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (1033ms)
+		AnalyzeDomain (402ms)
+			TypeCache.Refresh (299ms)
+				TypeCache.ScanAssembly (272ms)
+			BuildScriptInfoCaches (93ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (943ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (872ms)
+		SetupLoadedEditorAssemblies (801ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
+			InitializePlatformSupportModulesInManaged (2ms)
 			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (152ms)
-			ProcessInitializeOnLoadAttributes (577ms)
-			ProcessInitializeOnLoadMethodAttributes (125ms)
+			BeforeProcessingInitializeOnLoad (137ms)
+			ProcessInitializeOnLoadAttributes (511ms)
+			ProcessInitializeOnLoadMethodAttributes (136ms)
 			AfterProcessingInitializeOnLoad (8ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 1.91 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.45 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 30 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6010 unused Assets / (6.6 MB). Loaded Objects now: 6505.
-Memory consumption went from 118.2 MB to 111.6 MB.
-Total: 14.752200 ms (FindLiveObjects: 1.433700 ms CreateObjectMapping: 0.896000 ms MarkObjects: 7.678200 ms  DeleteObjects: 4.473400 ms)
+Unloading 6010 unused Assets / (6.1 MB). Loaded Objects now: 6507.
+Memory consumption went from 119.2 MB to 113.1 MB.
+Total: 15.783900 ms (FindLiveObjects: 1.133000 ms CreateObjectMapping: 0.852400 ms MarkObjects: 8.677800 ms  DeleteObjects: 5.116400 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 16416.336096 seconds.
-  path: Assets/Materials/Floor3.png
-  artifactKey: Guid(086433554efe9be4bbe55e13b27be768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Floor3.png using Guid(086433554efe9be4bbe55e13b27be768) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7ab235df328ab7d892648c5550bbc23b') in 0.1159722 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 64742.538403 seconds.
+  path: Assets/nappin/House Props Softpack/Models/(Msh)Drawer2.fbx
+  artifactKey: Guid(6c7a2a8a5ceb1b24d895569a8605a3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/nappin/House Props Softpack/Models/(Msh)Drawer2.fbx using Guid(6c7a2a8a5ceb1b24d895569a8605a3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '51bda5226eb99feb147445afd8e7c281') in 0.3715443 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Materials/brick-wall-seamless-geometric-texture-white-design-simple-background-vector.jpg
-  artifactKey: Guid(3c87e37ed0670e2408b3019083270a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/brick-wall-seamless-geometric-texture-white-design-simple-background-vector.jpg using Guid(3c87e37ed0670e2408b3019083270a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a529b262afc870dab7143a57ae856f09') in 0.0264887 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 0.000028 seconds.
+  path: Assets/nappin/House Props Softpack/Models/(Msh)Drawer1.fbx
+  artifactKey: Guid(2239a0a1b2001b34c820ab19d7bbda89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/nappin/House Props Softpack/Models/(Msh)Drawer1.fbx using Guid(2239a0a1b2001b34c820ab19d7bbda89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '009f466e787da050949dda6491a588f5') in 0.0533821 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/nappin/House Props Softpack/Models/(Msh)Fridge.fbx
+  artifactKey: Guid(2fd41568ee19c9343a65da176f778932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/nappin/House Props Softpack/Models/(Msh)Fridge.fbx using Guid(2fd41568ee19c9343a65da176f778932) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a52058a4e43676446061ec0e9ed9321d') in 0.0603475 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/nappin/House Props Softpack/Models/(Msh)Drawer3.fbx
+  artifactKey: Guid(673ac7f73d1850e41b12db0a6bbe30c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/nappin/House Props Softpack/Models/(Msh)Drawer3.fbx using Guid(673ac7f73d1850e41b12db0a6bbe30c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e5a0e17b70c02ee4295bc0d7b100a380') in 0.053358 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
 

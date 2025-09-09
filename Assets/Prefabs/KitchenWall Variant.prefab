@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6382312332626535794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.16986205
+      objectReference: {fileID: 0}
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.027089106
+      objectReference: {fileID: 0}
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0438
+      objectReference: {fileID: 0}
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0068099946
+      objectReference: {fileID: 0}
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0033
+      objectReference: {fileID: 0}
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 675006115560113278, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080714821558055427, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: m_Name
+      value: KitchenWall Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874104504332323833, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b7053901e15ca66419c0d2dfe2682d84, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 388933e78cb5b6748a5caccdae6a6c29, type: 3}
