@@ -1,9 +1,9 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.2/respin/6000.2.0f1-517f89d850d1' branch; Version is '6000.2.0f1 (eed1c594c913) revision 15651269'; Using compiler version '194234433'; Build Type 'Release'
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian" at "2025-09-09T04:58:19.9074543Z"
 OS: 'Windows 11  (10.0.26100) 64bit CoreSingleLanguage' Language: 'en' Physical Memory: 7418 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian" at "2025-09-09T05:28:27.2394116Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
-Date: 2025-09-09T04:58:19Z
+Date: 2025-09-09T05:28:27Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.2.0f1\Editor\Unity.exe
@@ -17,7 +17,7 @@ C:/Users/Sealbastian/Documents/SP2025
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-52459
+49997
 -licensingIpc
 LicenseClient-Sealbastian
 -job-worker-count
@@ -65,12 +65,12 @@ C:/Users/Sealbastian/Documents/SP2025
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [17672]  Target information:
+Player connection [1916]  Target information:
 
-Player connection [17672]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 3807261279 [EditorId] 3807261279 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R1QJ1R5) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [1916]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 1059415953 [EditorId] 1059415953 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R1QJ1R5) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [17672] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [17672] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [1916] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [1916] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -82,26 +82,26 @@ Input System module state changed to: Initialized.
 	ResponseStatus: Unsupported protocol version '1.17.1'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-Sealbastian"
 [Licensing::IpcConnector] LicenseClient-Sealbastian channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian-6000.2.0" at "2025-09-09T04:58:19.9615163Z"
-Library Redirect Path: Library/
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 19148, path: "C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian-6000.2.0" at "2025-09-09T05:28:27.2915634Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 5904, path: "C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.17.1+ae67fbc
-  Session Id:              e61b745d149c4e6dbea7cdf2e6b3b667
-  Correlation Id:          24ea57e4b76a9bb0c926897bae4a0791
-  External correlation Id: 696524506406162680
+  Session Id:              2185e010c988406aae6b16ad9c8b39c5
+  Correlation Id:          e407556f7a8486ec9458b16f6901f0f9
+  External correlation Id: 7288835376671777596
   Machine Id:              VOykiKglYbCqCtPdp9R99kemwRM=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Sealbastian-6000.2.0" (connect: 0.00s, validation: 0.01s, handshake: 0.02s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian-6000.2.0-notifications" at "2025-09-09T04:58:19.9967075Z"
-[Licensing::Module] Licensing Background thread has ended after 0.09s
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-Sealbastian-6000.2.0" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-Sealbastian-6000.2.0-notifications" at "2025-09-09T05:28:27.3069006Z"
+[Licensing::Module] Licensing Background thread has ended after 0.07s
+Library Redirect Path: Library/
 [Physics::Module] Selected backend.
 [Physics::Module] Name: PhysX
 [Physics::Module] Id: 0xf2b8ea05
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 171.57 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.10 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.2.0f1 (eed1c594c913)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/Resources/UnitySubsystems
@@ -118,43 +118,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56424
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56680
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004422 seconds.
-- Loaded All Assemblies, in  0.766 seconds
+Registered in 0.003131 seconds.
+- Loaded All Assemblies, in  0.537 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.537 seconds
-Domain Reload Profiling: 1299ms
-	BeginReloadAssembly (374ms)
+- Finished resetting the current domain, in  0.395 seconds
+Domain Reload Profiling: 930ms
+	BeginReloadAssembly (224ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (2ms)
-	RebuildCommonClasses (60ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (78ms)
-	LoadAllAssembliesAndSetupDomain (238ms)
-		LoadAssemblies (366ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (62ms)
+	LoadAllAssembliesAndSetupDomain (191ms)
+		LoadAssemblies (216ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (234ms)
-			TypeCache.Refresh (230ms)
-				TypeCache.ScanAssembly (196ms)
+		AnalyzeDomain (187ms)
+			TypeCache.Refresh (184ms)
+				TypeCache.ScanAssembly (163ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (2ms)
-	FinalizeReload (538ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (396ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (445ms)
+		SetupLoadedEditorAssemblies (353ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (88ms)
-			SetLoadedEditorAssemblies (8ms)
-			BeforeProcessingInitializeOnLoad (112ms)
-			ProcessInitializeOnLoadAttributes (161ms)
-			ProcessInitializeOnLoadMethodAttributes (76ms)
+			InitializePlatformSupportModulesInManaged (55ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (155ms)
+			ProcessInitializeOnLoadMethodAttributes (62ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -169,59 +169,67 @@ Begin MonoManager ReloadAssembly
   Product: Unity Personal
   Type: Assigned
   Expiration: Unlimited
-- Loaded All Assemblies, in  1.438 seconds
-Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.501 seconds
+Refreshing native plugins compatible for Editor in 1.36 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 [MODES] ModeService[none].Initialize
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-SP2025
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.854 seconds
-Domain Reload Profiling: 2248ms
-	BeginReloadAssembly (249ms)
+- Finished resetting the current domain, in  1.032 seconds
+Domain Reload Profiling: 2514ms
+	BeginReloadAssembly (391ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (10ms)
+		DisableScriptedObjects (14ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (35ms)
-	RebuildCommonClasses (38ms)
+		CreateAndSetChildDomain (48ms)
+	RebuildCommonClasses (37ms)
 	RebuildNativeTypeToScriptingClass (12ms)
 	initialDomainReloadingComplete (47ms)
-	LoadAllAssembliesAndSetupDomain (1048ms)
-		LoadAssemblies (861ms)
+	LoadAllAssembliesAndSetupDomain (994ms)
+		LoadAssemblies (807ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (309ms)
-			TypeCache.Refresh (233ms)
-				TypeCache.ScanAssembly (213ms)
-			BuildScriptInfoCaches (66ms)
+		AnalyzeDomain (403ms)
+			TypeCache.Refresh (267ms)
+				TypeCache.ScanAssembly (240ms)
+			BuildScriptInfoCaches (125ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (854ms)
+	FinalizeReload (1033ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (715ms)
+		SetupLoadedEditorAssemblies (872ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (164ms)
-			ProcessInitializeOnLoadAttributes (437ms)
-			ProcessInitializeOnLoadMethodAttributes (100ms)
-			AfterProcessingInitializeOnLoad (7ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (152ms)
+			ProcessInitializeOnLoadAttributes (577ms)
+			ProcessInitializeOnLoadMethodAttributes (125ms)
+			AfterProcessingInitializeOnLoad (8ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 1.86 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.91 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 30 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6010 unused Assets / (6.4 MB). Loaded Objects now: 6505.
-Memory consumption went from 120.2 MB to 113.9 MB.
-Total: 13.347800 ms (FindLiveObjects: 1.390500 ms CreateObjectMapping: 0.987700 ms MarkObjects: 7.492600 ms  DeleteObjects: 3.473100 ms)
+Unloading 6010 unused Assets / (6.6 MB). Loaded Objects now: 6505.
+Memory consumption went from 118.2 MB to 111.6 MB.
+Total: 14.752200 ms (FindLiveObjects: 1.433700 ms CreateObjectMapping: 0.896000 ms MarkObjects: 7.678200 ms  DeleteObjects: 4.473400 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 14609.490542 seconds.
-  path: Assets/Wall.prefab
-  artifactKey: Guid(459806d300abfba43a16670e42699939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Wall.prefab using Guid(459806d300abfba43a16670e42699939) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '69f7fbed6cf93465f6d541d89c315532') in 0.2370542 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+  Time since last request: 16416.336096 seconds.
+  path: Assets/Materials/Floor3.png
+  artifactKey: Guid(086433554efe9be4bbe55e13b27be768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Floor3.png using Guid(086433554efe9be4bbe55e13b27be768) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7ab235df328ab7d892648c5550bbc23b') in 0.1159722 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Materials/brick-wall-seamless-geometric-texture-white-design-simple-background-vector.jpg
+  artifactKey: Guid(3c87e37ed0670e2408b3019083270a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/brick-wall-seamless-geometric-texture-white-design-simple-background-vector.jpg using Guid(3c87e37ed0670e2408b3019083270a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a529b262afc870dab7143a57ae856f09') in 0.0264887 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
