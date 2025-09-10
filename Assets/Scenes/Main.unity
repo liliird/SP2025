@@ -27397,11 +27397,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::APIClient
   url: http://127.0.0.1:5000/step
-  survivorPrefab: {fileID: 2557028337610727735, guid: 670fbceba7273af4a8c6296df2a54316, type: 3}
+  rescatistaPrefab: {fileID: 2557028337610727735, guid: 670fbceba7273af4a8c6296df2a54316, type: 3}
   doorPrefab: {fileID: 6919254852116977045, guid: 16ea3d15f038d6045805b9963e51be1b, type: 3}
   wallPrefab: {fileID: 1469060133845752117, guid: 8f499686538621f47978540125a14670, type: 3}
   zombiePrefab: {fileID: 551284543497481919, guid: a6e0b10aaa6e46741b22acaaf6e66c9e, type: 3}
-  poiPrefab: {fileID: 688055259041322106, guid: da60319652117604382dd812833f80d0, type: 3}
+  victimPrefab: {fileID: 688055259041322106, guid: da60319652117604382dd812833f80d0, type: 3}
   cellSize: 1
   offsetX: 40.5
   offsetZ: -77.5
@@ -94707,11 +94707,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::APIClient
   url: http://127.0.0.1:5000/step
-  survivorPrefab: {fileID: 0}
+  rescatistaPrefab: {fileID: 0}
   doorPrefab: {fileID: 0}
   wallPrefab: {fileID: 0}
   zombiePrefab: {fileID: 0}
-  poiPrefab: {fileID: 0}
+  victimPrefab: {fileID: 0}
   cellSize: 1
   offsetX: -5
   offsetZ: -4
