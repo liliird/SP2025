@@ -8,7 +8,7 @@ public class RescatistaData {
     public int id;
     public int x;
     public int y;
-    public int victimsRescue;
+    public int victimsRescued;
     public bool hasVictim;
     public int moves;
 }
@@ -51,15 +51,15 @@ public class APIClient : MonoBehaviour {
     // Prefabs para instanciar en Unity
     public GameObject rescatistaPrefab;
     public GameObject doorPrefab;
-    public GameObject wallPrefab;
     public GameObject zombiePrefab;
     public GameObject victimPrefab;
 
     // Diccionarios en lugar de listas para no duplicar objetos
     private Dictionary<int, GameObject> rescatistasGO = new Dictionary<int, GameObject>();
-    private Dictionary<string, GameObject> obstaclesGO = new Dictionary<string, GameObject>();
+    private Dictionary<string, GameObject> doorsGO = new Dictionary<string, GameObject>();
     private Dictionary<string, GameObject> zombiesGO = new Dictionary<string, GameObject>();
     private Dictionary<string, GameObject> victimsGO = new Dictionary<string, GameObject>();
+    private Dictionary<string, GameObject> wallsGO = new Dictionary<string, GameObject>();
 
     // === Configuración de grid ===
     public float cellSize = 1.0f;   // tamaño de cada celda en Unity
@@ -67,6 +67,15 @@ public class APIClient : MonoBehaviour {
     public float offsetZ = -71f;   // offset en Z (ajustar según el escenario)
 
     void Start() {
+        // Buscar paredes ya colocadas en la escena
+        foreach (var wall in GameObject.FindGameObjectsWithTag("Wall")) {
+        string cleanName = wall.name
+            .Replace("Wall", "")   // quita la palabra Wall
+            .Replace("(", "")      // quita paréntesis
+            .Replace(")", "")      // quita paréntesis
+            .Replace(" ", "");     // quita espacios
+        wallsGO[cleanName] = wall;
+        }
         StartCoroutine(UpdateLoop());
     }
 
@@ -103,46 +112,68 @@ public class APIClient : MonoBehaviour {
                 rescatistasGO[r.id].transform.position = pos;
             }
         }
+        // eliminar rescatistas que ya no estén
+        List<int> rescToRemove = new List<int>();
+        foreach (var id in rescatistasGO.Keys)
+        {
+            if (!rescatistasAlive.Contains(id))
+                rescToRemove.Add(id);
 
-        // === Obstacles (walls + doors) ===
-        HashSet<string> obstaclesAlive = new HashSet<string>();
+        }
+        foreach (var id in rescToRemove)
+        {
+            Destroy(rescatistasGO[id]);
+            rescatistasGO.Remove(id);
+        }
+
+        // === Paredes (type = 1) ===
+        HashSet<string> wallsAlive = new HashSet<string>();
         foreach (var o in data.obstacles) {
+            if (o.type != 1) continue; // solo paredes
+
             string key = $"{o.x},{o.y},{o.direction}";
-            obstaclesAlive.Add(key);
+            wallsAlive.Add(key);
+
+            if (wallsGO.ContainsKey(key)) {
+                wallsGO[key].SetActive(true); // activar pared si existe en el server
+            }
+        }
+
+        // Desactivar paredes que ya no estén
+        foreach (var key in wallsGO.Keys) {
+            if (!wallsAlive.Contains(key)) {
+                wallsGO[key].SetActive(false);
+            }
+        }
+    
+        // === Puertas (type = 2) ===
+        HashSet<string> doorsAlive = new HashSet<string>();
+        foreach (var o in data.obstacles) {
+            if (o.type != 2) continue; // ignorar paredes (ya están en escena)
+
+            string key = $"{o.x},{o.y},{o.direction}";
+            doorsAlive.Add(key);
 
             var (pos, rot) = GetTransform(o);
 
-            GameObject prefabToUse = null;
-
-            if (o.type == 1) {
-                prefabToUse = wallPrefab;   // prefab de MURO
-            }
-            else if (o.type == 2) {
-                prefabToUse = doorPrefab;   // prefab de PUERTA
-            }
-
-            if (!obstaclesGO.ContainsKey(key)) {
-                GameObject go = Instantiate(prefabToUse, pos, rot);
-                obstaclesGO[key] = go;
+            if (!doorsGO.ContainsKey(key)) {
+                GameObject go = Instantiate(doorPrefab, pos, rot);
+                doorsGO[key] = go;
             } else {
-                obstaclesGO[key].transform.position = pos;
-                obstaclesGO[key].transform.rotation = rot;
+                doorsGO[key].transform.position = pos;
+                doorsGO[key].transform.rotation = rot;
             }
         }
-
-        // 🔴 Eliminar obstáculos que ya no están
-        List<string> toRemove = new List<string>();
-        foreach (var key in obstaclesGO.Keys) {
-            if (!obstaclesAlive.Contains(key))
-                toRemove.Add(key);
+        // eliminar puertas que ya no estén
+        List<string> doorsToRemove = new List<string>();
+        foreach (var key in doorsGO.Keys) {
+            if (!doorsAlive.Contains(key))
+                doorsToRemove.Add(key);
         }
-        foreach (var key in toRemove) {
-            Destroy(obstaclesGO[key]);
-            obstaclesGO.Remove(key);
+        foreach (var key in doorsToRemove) {
+            Destroy(doorsGO[key]);
+            doorsGO.Remove(key);
         }
-
-
-        
 
         // === Zombies ===
         RefreshObjects<ZombieData>(data.zombies, zombiePrefab, zombiesGO, z => $"{z.x},{z.y}");
@@ -180,47 +211,42 @@ public class APIClient : MonoBehaviour {
     }
 
     (Vector3, Quaternion) GetTransform<T>(T obj) {
-        if (obj is ObstacleData o) {
+         if (obj is ObstacleData o && o.type == 2) { // solo puertas
             Vector3 basePos = ToWorldPosition(o.x, o.y);
             Vector3 offset = Vector3.zero;
             Quaternion rot = Quaternion.identity;
 
             float half = cellSize / 2f;
 
-            if (o.direction == "N")
-            { // NORTH
+            if (o.direction == "N") {
                 offset = new Vector3(0, 0, half);
                 rot = Quaternion.identity;
             }
-            else if (o.direction == "E")
-            { // EAST
+            else if (o.direction == "E") {
                 offset = new Vector3(half, 0, 0);
                 rot = Quaternion.Euler(0, 90, 0);
             }
-            else if (o.direction == "S")
-            { // SOUTH
+            else if (o.direction == "S") {
                 offset = new Vector3(0, 0, -half);
                 rot = Quaternion.identity;
             }
-            else if (o.direction == "W")
-            { // WEST
+            else if (o.direction == "W") {
                 offset = new Vector3(-half, 0, 0);
                 rot = Quaternion.Euler(0, 90, 0);
             }
 
-            GameObject prefab = (o.type == 1) ? wallPrefab : doorPrefab;
             return (basePos + offset, rot);
         }
 
-
-        if (obj is ZombieData z) 
+        if (obj is ZombieData z)
             return (ToWorldPosition(z.x, z.y), Quaternion.identity);
 
-        if (obj is VictimData v) 
+        if (obj is VictimData v)
             return (ToWorldPosition(v.x, v.y), Quaternion.identity);
 
         return (Vector3.zero, Quaternion.identity);
     }
+
 
 
     //traducir coordenadas de Mesa → Unity
@@ -230,5 +256,12 @@ public class APIClient : MonoBehaviour {
         return new Vector3(worldX, 0, worldZ);
     }
 }
+
+
+
+
+
+
+
 
 
