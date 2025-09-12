@@ -4171,7 +4171,7 @@ Transform:
   m_GameObject: {fileID: 86026474}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6072718, y: -0, z: -0, w: 0.7944942}
-  m_LocalPosition: {x: 50.4, y: 7.4, z: -81.4}
+  m_LocalPosition: {x: 49.8, y: 7.4, z: -81.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99551,8 +99551,8 @@ MonoBehaviour:
   zombieKillerPrefab: {fileID: 4348939654729303537, guid: 8f8265c7db23f4c4c8259212892b807f, type: 3}
   doorPrefab: {fileID: 6919254852116977045, guid: 16ea3d15f038d6045805b9963e51be1b, type: 3}
   cellSize: 1
-  offsetX: 48
-  offsetZ: -71
+  offsetX: 37.5
+  offsetZ: -73
   offsetY: -0.5
 --- !u!114 &2116946301
 MonoBehaviour:
