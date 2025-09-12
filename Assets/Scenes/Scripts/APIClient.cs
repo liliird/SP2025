@@ -19,7 +19,7 @@ public class ObstacleData
     public int x;
     public int y;
     public string direction; //1=N, 2=E, 4=S, 8=W
-    public int type; // 1 pared, 2 puerta
+    public int type; // 1 pared, 2 puerta, 3 puerta abierta
 }
 
 
@@ -50,9 +50,12 @@ public class APIClient : MonoBehaviour {
 
     // Prefabs para instanciar en Unity
     public GameObject rescatistaPrefab;
-    public GameObject doorPrefab;
-    public GameObject zombiePrefab;
     public GameObject victimPrefab;
+    public GameObject poiPrefab;
+    public GameObject zombieSleepingPrefab;
+    public GameObject zombieActivePrefab;
+    public GameObject zombieKillerPrefab;
+    public GameObject doorPrefab;
 
     // Diccionarios en lugar de listas para no duplicar objetos
     private Dictionary<int, GameObject> rescatistasGO = new Dictionary<int, GameObject>();
@@ -66,6 +69,7 @@ public class APIClient : MonoBehaviour {
     public float offsetX = 48f;   // offset en X (ajustar según el escenario)
     public float offsetZ = -71f;   // offset en Z (ajustar según el escenario)
 
+     public float offsetY = -0.5f; 
     void Start() {
         // Buscar paredes ya colocadas en la escena
         foreach (var wall in GameObject.FindGameObjectsWithTag("Wall")) {
@@ -75,6 +79,17 @@ public class APIClient : MonoBehaviour {
             .Replace(")", "")      // quita paréntesis
             .Replace(" ", "");     // quita espacios
         wallsGO[cleanName] = wall;
+        }
+        
+        // Buscar puertas ya colocadas en la escena
+        foreach (var door in GameObject.FindGameObjectsWithTag("Door"))
+        {
+            string cleanName = door.name
+                .Replace("Door", "")   // quita la palabra Door
+                .Replace("(", "")
+                .Replace(")", "")
+                .Replace(" ", "");
+            doorsGO[cleanName] = door;
         }
         StartCoroutine(UpdateLoop());
     }
@@ -146,40 +161,138 @@ public class APIClient : MonoBehaviour {
             }
         }
     
-        // === Puertas (type = 2) ===
+        // === Puertas (type = 2 = cerrada, type = 3 = abierta) ===
         HashSet<string> doorsAlive = new HashSet<string>();
         foreach (var o in data.obstacles) {
-            if (o.type != 2) continue; // ignorar paredes (ya están en escena)
+            if (o.type != 2 && o.type != 3) continue; 
 
             string key = $"{o.x},{o.y},{o.direction}";
             doorsAlive.Add(key);
 
-            var (pos, rot) = GetTransform(o);
+            if (doorsGO.ContainsKey(key)) {
+                var door = doorsGO[key];
+                door.SetActive(true);
 
-            if (!doorsGO.ContainsKey(key)) {
-                GameObject go = Instantiate(doorPrefab, pos, rot);
-                doorsGO[key] = go;
-            } else {
-                doorsGO[key].transform.position = pos;
-                doorsGO[key].transform.rotation = rot;
+                // Rotar si está abierta
+                if (o.type == 3) {
+                    door.transform.rotation = Quaternion.Euler(0, 90, 0); 
+                } else {
+                    door.transform.rotation = Quaternion.identity;
+                }
             }
         }
-        // eliminar puertas que ya no estén
-        List<string> doorsToRemove = new List<string>();
-        foreach (var key in doorsGO.Keys) {
-            if (!doorsAlive.Contains(key))
-                doorsToRemove.Add(key);
-        }
-        foreach (var key in doorsToRemove) {
-            Destroy(doorsGO[key]);
-            doorsGO.Remove(key);
-        }
+
+
 
         // === Zombies ===
-        RefreshObjects<ZombieData>(data.zombies, zombiePrefab, zombiesGO, z => $"{z.x},{z.y}");
+        HashSet<string> zombiesAlive = new HashSet<string>();
+        foreach (var z in data.zombies)
+        {
+            string key = $"{z.x},{z.y}";
+            zombiesAlive.Add(key);
+
+            Vector3 pos = ToWorldPosition(z.x, z.y);
+
+            GameObject prefab = zombieSleepingPrefab;
+            if (z.state == 2) prefab = zombieActivePrefab;
+            else if (z.state == 3) prefab = zombieKillerPrefab;
+
+            if (!zombiesGO.ContainsKey(key))
+            {
+                GameObject go = Instantiate(prefab, pos, Quaternion.identity);
+                zombiesGO[key] = go;
+            }
+            else
+            {
+                zombiesGO[key].transform.position = pos;
+
+                // Si cambió de estado (ej: de dormido a killer), reemplazar prefab
+                string currentPrefabName = zombiesGO[key].name.Replace("(Clone)", "");
+                if (prefab.name != currentPrefabName)
+                {
+                    Destroy(zombiesGO[key]);
+                    GameObject go = Instantiate(prefab, pos, Quaternion.identity);
+                    zombiesGO[key] = go;
+                }
+            }
+        }
+
+        // Limpiar zombies que ya no existen
+        List<string> zombiesToRemove = new List<string>();
+        foreach (var key in zombiesGO.Keys)
+        {
+            if (!zombiesAlive.Contains(key))
+                zombiesToRemove.Add(key);
+        }
+        foreach (var key in zombiesToRemove)
+        {
+            Destroy(zombiesGO[key]);
+            zombiesGO.Remove(key);
+        }
+
 
         // === Victims ===
-        RefreshObjects<VictimData>(data.victims, victimPrefab, victimsGO, v => $"{v.x},{v.y}");
+        HashSet<string> victimsAlive = new HashSet<string>();
+        foreach (var v in data.victims)
+        {
+            string key = $"{v.x},{v.y}";
+            victimsAlive.Add(key);
+
+            Vector3 pos = ToWorldPosition(v.x, v.y);
+
+            if (v.type == 3)
+            {
+                // Falsa alarma -> eliminar si existe
+                if (victimsGO.ContainsKey(key))
+                {
+                    Destroy(victimsGO[key]);
+                    victimsGO.Remove(key);
+                }
+            }
+            else if (v.type == 2)
+            {
+                // Víctima real
+                if (!victimsGO.ContainsKey(key))
+                {
+                    GameObject go = Instantiate(victimPrefab, pos, Quaternion.identity);
+                    victimsGO[key] = go;
+                }
+                else
+                {
+                    victimsGO[key].transform.position = pos;
+                }
+            }
+            else if (v.type == 1)
+            {
+                // POI sin revelar
+                if (!victimsGO.ContainsKey(key))
+                {
+                    GameObject go = Instantiate(poiPrefab, pos, Quaternion.identity);
+                    victimsGO[key] = go;
+                }
+                else
+                {
+                    victimsGO[key].transform.position = pos;
+                }
+            }
+
+        }
+
+        // Limpiar los que ya no están
+        List<string> toRemove = new List<string>();
+        foreach (var key in victimsGO.Keys)
+        {
+            if (!victimsAlive.Contains(key))
+                toRemove.Add(key);
+        }
+        foreach (var key in toRemove)
+        {
+            Destroy(victimsGO[key]);
+            victimsGO.Remove(key);
+        }
+
+
+
     }
 
     void RefreshObjects<T>(T[] objects, GameObject prefab, Dictionary<string, GameObject> dict, System.Func<T, string> getKey) {
@@ -253,7 +366,7 @@ public class APIClient : MonoBehaviour {
     Vector3 ToWorldPosition(int gridX, int gridY) {
         float worldX = gridX * cellSize + offsetX;
         float worldZ = gridY * cellSize + offsetZ;
-        return new Vector3(worldX, 0, worldZ);
+        return new Vector3(worldX, offsetY, worldZ);
     }
 }
 
